@@ -22,7 +22,7 @@ export const authMe = (token, request) => {
 export const signIn = (data, request) => {
   return async dispatch => {
     dispatch(showLoader());
-    const json = await request('https://app-200903.herokuapp.com/api/auth/signin', 'POST', {'Content-Type': 'application/json'}, data);
+    const json = await request('/api/auth/signin', 'POST', {'Content-Type': 'application/json'}, data);
     dispatch(hideLoader());
     if (json.error) return
     localStorage.setItem('userData', JSON.stringify({jwtToken: json.token}))
