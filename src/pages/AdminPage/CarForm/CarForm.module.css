@@ -1,0 +1,32 @@
+
+.form {
+    padding: 10px;
+}
+.inputGroup {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.label {
+    flex-basis: 362px;
+}
+.inputWrap {
+    flex-basis: 150px;
+}
+.input {
+    padding: 5px;
+    height: 30px;
+    margin-left: 5px;
+    width: 100%;
+}
+.btn {
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px  solid black;
+    padding: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.list {
+    list-style: none;
+}
+.link {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 100%;
+}

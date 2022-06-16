@@ -1,0 +1,19 @@
+.window {
+    position: relative;
+    max-width: 250px;
+    min-width: 200px;
+    max-height: 80%;
+    overflow-y: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}

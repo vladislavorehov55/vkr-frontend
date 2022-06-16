@@ -1,0 +1,36 @@
+.wrap {
+    height: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.inputGroup {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input {
+    height: 40px;
+    margin-left: 30px;
+    outline: none;
+    padding: 5px;
+}
+.selectWrap {
+    width: 200px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.btnWrap {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    padding: 5px;
+    height: 40px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 10px
+}

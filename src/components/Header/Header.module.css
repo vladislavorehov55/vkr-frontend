@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    height: 40px;
+    align-items: center;
+}
+.headerEnd {
+    justify-content: flex-end;
+}
+
+.signoutWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 2.5px 5px;
+}
+.signoutWrap:hover .signout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signout {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    background: #fff;
+    height: 30px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}

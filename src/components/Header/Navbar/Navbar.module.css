@@ -1,0 +1,35 @@
+.nav {
+    flex-basis: 200px;
+}
+.menu {
+    display: flex;
+    list-style: none;
+}
+.menuItem {
+    position: relative;
+    margin-right: 10px;
+}
+.menuItem:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    background: #fff;
+    border: 1px solid black;
+    border-top: none;
+}
+.submenuItem {
+    padding: 10px;
+    cursor: pointer;
+}
+.submenuItem:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+.link {
+    text-decoration: none;
+    color: black;
+}

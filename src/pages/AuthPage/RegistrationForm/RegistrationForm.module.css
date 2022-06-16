@@ -1,0 +1,39 @@
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    flex-basis: 85%;
+}
+.inputGroup {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+.input {
+    height: 30px;
+    flex-basis: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+}
+.label {
+    flex-basis: 123px;
+    margin-right: 5px;
+}
+.btnWrap {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    padding: 10px;
+    background: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}

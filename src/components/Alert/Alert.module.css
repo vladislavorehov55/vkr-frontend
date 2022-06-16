@@ -1,0 +1,25 @@
+.wrap {
+    padding: 0 10px;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    transition-property: top;
+    transition-duration: 0.5s;
+    z-index: 2;
+}
+.animateWrap {
+    top: 0;
+}
+.green {
+    background: lightgreen;
+}
+.red {
+    background: red;
+}
+.btn {
+    cursor: pointer;
+}

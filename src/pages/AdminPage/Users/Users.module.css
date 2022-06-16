@@ -1,0 +1,17 @@
+.th, .td{
+    padding: .75rem;
+    text-align: center;
+}
+.td{
+    border-top: 1px solid;
+}
+tbody td:last-child{
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.title {
+    text-align: center;
+}
