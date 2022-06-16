@@ -7,7 +7,7 @@ export const useHTTPRequest = () => {
     if (headers['Content-Type'] === 'application/json' ) {
       body = JSON.stringify(body);
     }
-    const response = await fetch(url, {method, body, headers});
+    const response = await fetch(`https://app-200903.herokuapp.com${url}`, {method, body, headers});
     const json = await response.json();
     if (!response.ok) {
       dispatch(showAlert('warning', json.message));
