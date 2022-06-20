@@ -8,8 +8,8 @@ export const useBtnDisabled = (url, method, headers, body, cb) => {
     if (btnDisabled) {
       request(url, method, headers, body)
         .then(() => {
-          setBtnDisabled(false)
-          cb()
+          setBtnDisabled(false);
+          cb();
         })
         .catch(() => {})
     }

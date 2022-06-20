@@ -1,8 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {useParams, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {showAlert} from "../../../redux/actions";
 import {useHTTPRequest} from "../../../userHooks/useHTTPRequest";
+import {useBtnDisabled} from "../../../userHooks/useBtnDisabled";
 import s from './DistanceMatrix.module.css';
 
 
@@ -11,21 +10,20 @@ const DistanceMatrix = () => {
   const [inputs, setInputs] = useState({})
   const {id} = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const {request} = useHTTPRequest();
-  const isBtnDisabled = useRef(false);
+  const [btnDisabled, setBtnDisabled] = useBtnDisabled(`/api/logist/address-save/${id}`, 'POST',
+    {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem('userData')).jwtToken}`
+    }, inputs, () =>  navigate('/'));
+  const isBtnClicked = useRef(false)
 
   const changeHandler = (e) => {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
-  const clickBtnHandler = async () => {
-    isBtnDisabled.current = true;
-    await request(`/api/logist/address-save/${id}`, 'POST',
-      {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem('userData')).jwtToken}`
-      }, inputs);
-    navigate('/');
+  const clickBtnHandler = () => {
+    isBtnClicked.current = true;
+    setBtnDisabled(true);
   }
   useEffect(() => {
     (async function () {
@@ -41,7 +39,7 @@ const DistanceMatrix = () => {
 
   useEffect(() => {
     return () => {
-      if (isBtnDisabled.current) return;
+      if (isBtnClicked.current) return
       localStorage.setItem('prevUrl', `${id}`);
     }
   }, [])
@@ -77,7 +75,8 @@ const DistanceMatrix = () => {
           }
         </div>
       </div>
-      <button onClick={clickBtnHandler} className={s.btn} disabled={isBtnDisabled.current}>Сохранить расстояния</button>
+      {/*<button onClick={clickBtnHandler} className={s.btn} disabled={isBtnDisabled.current}>Сохранить расстояния</button>*/}
+      <button onClick={clickBtnHandler} className={s.btn} disabled={btnDisabled}>Сохранить расстояния</button>
     </div>
   )
 }
